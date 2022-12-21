@@ -53,7 +53,7 @@ uint16_t determineScore(std::string round) {
 
 int main(int argc, char const *argv[]) {
   std::string line;
-  std::ifstream File("day2.txt");
+  std::ifstream File("../inputs/day2.txt");
   uint16_t score;
   while (std::getline(File, line)) {
     score += determineScore(line);

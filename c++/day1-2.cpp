@@ -23,7 +23,7 @@ std::array<int, 3> checkNewTop3(int current, std::array<int, 3> top_3) {
 
 int main(int argc, char const *argv[]) {
   std::string line;
-  std::ifstream File("day1.txt");
+  std::ifstream File("../inputs/day1.txt");
 
   int current = 0;
   std::array<int, 3> top_3;

@@ -10,7 +10,7 @@ int checkNewTop3(int current, int max) {
 
 int main(int argc, char const *argv[]) {
   std::string line;
-  std::ifstream File("day1.txt");
+  std::ifstream File("../inputs/day1.txt");
 
   int max = 0;
   int current = 0;
