@@ -6,13 +6,13 @@ fn main() {
     let path = Path::new("../../inputs/day3.txt");
     let part_1_priority: u32 = read_lines(path)
         .expect("Line buffer failure")
-        .map(Result::unwrap)
+        .map(|line| Result::expect(line, "Line read failure"))
         .map(score_part_1)
         .sum();
 
     let part_2_priority: u32 = read_lines(path)
         .expect("Line buffer failure")
-        .map(Result::unwrap)
+        .map(|line| Result::expect(line, "Line read failure"))
         .collect::<Vec<String>>()
         .chunks(3)
         .map(score_part_2)
