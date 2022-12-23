@@ -11,11 +11,7 @@ fn main() {
 
     let initial_crate_order = parse_crate_order(raw_text.clone());
 
-    let part_1_top_crate: String = read_lines(path)
-        .expect("Line buffer failure")
-        .map(|line| Result::expect(line, "Line read failure"))
-        .map(score_part_1)
-        .collect();
+    let part_1_top_crate: String = score_part_1(raw_text.clone(), initial_crate_order.clone());
 
     let part_2_top_crate: u32 = read_lines(path)
         .expect("Line buffer failure")
@@ -61,19 +57,33 @@ fn parse_crate_order(setup: Vec<String>) -> Vec<Vec<char>> {
 
     for line in initial_order {
         let mut current_stack = 0;
-        for item in line.chars().collect::<Vec<char>>().chunks(4) {
-            if item.contains(!&'[') {}
-            crates[current_stack].push(item.last().expect("No item in stack").clone());
+        for item in line
+            .chars()
+            .filter(|x| x != &'[' && x != &']' && x != &' ')
+            .collect::<Vec<char>>()
+        {
+            crates[current_stack].push(item);
             current_stack += 1;
         }
         current_stack = 0;
     }
-    panic!("Not implemented");
-    //|c| c != '[' || c != ']'
+    return crates;
 }
 
-fn score_part_1(line: String) -> String {
-    return "aa".to_string();
+fn score_part_1(moves: Vec<String>, crate_order: Vec<Vec<char>>) -> String {
+    for one_move in moves.iter().skip_while(|x| !x.contains("m")) {
+        let cleaned_move = one_move
+            .chars()
+            .filter(|x| x.is_numeric() || x.is_whitespace())
+            .collect::<String>()
+            .replace("  ", " ")
+            .trim()
+            .split_ascii_whitespace()
+            .map(|x| x.parse());
+
+        println!("{}", cleaned_move);
+    }
+    panic!("Not implemented");
 }
 
 fn score_part_2(_line: String) -> u32 {
