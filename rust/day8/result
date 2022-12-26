@@ -1,0 +1,172 @@
+30373
+25512
+65332
+33549
+35390
+
+At (1,1)
+max height = 5
+down 5
+1
+up 0
+1
+right 5
+1
+left 2
+1
+Total: 1
+New max 1 at (1,1)
+
+At (1,2)
+max height = 5
+down 5
+1
+up 3
+1
+right 1
+right 2
+2
+left 5
+1
+Total: 2
+New max 2 at (1,2)
+
+At (1,3)
+max height = 3
+down 1
+down 3
+2
+up 7
+1
+right 2
+1
+left 5
+1
+Total: 2
+
+At (1,4)
+max height = 5
+down 2
+down 2
+down 9
+3
+up 3
+1
+0
+left 1
+left 5
+2
+Total: 0
+
+At (2,1)
+max height = 5
+down 5
+1
+up 5
+1
+right 3
+right 3
+right 2
+3
+left 6
+1
+Total: 3
+New max 3 at (2,1)
+
+At (2,2)
+max height = 3
+down 3
+1
+up 5
+1
+right 3
+1
+left 5
+1
+Total: 1
+
+At (2,3)
+max height = 5
+down 3
+down 4
+down 9
+3
+up 1
+up 7
+2
+right 2
+1
+left 3
+left 5
+2
+Total: 12
+New max 12 at (2,3)
+
+At (2,4)
+max height = 3
+down 2
+down 9
+2
+up 2
+up 3
+2
+0
+left 3
+1
+Total: 0
+
+At (3,1)
+max height = 1
+down 3
+1
+up 5
+1
+right 5
+1
+left 3
+1
+Total: 1
+
+At (3,2)
+max height = 3
+down 5
+1
+up 3
+1
+right 4
+1
+left 3
+1
+Total: 1
+
+At (3,3)
+max height = 4
+down 4
+1
+up 3
+up 1
+up 7
+3
+right 9
+1
+left 5
+1
+Total: 3
+
+At (3,4)
+max height = 9
+down 9
+1
+up 2
+up 2
+up 3
+3
+0
+left 4
+left 5
+left 3
+left 3
+4
+Total: 0
+Part 1 number of visible trees = 21
+Part 2 max scenic score = 12
