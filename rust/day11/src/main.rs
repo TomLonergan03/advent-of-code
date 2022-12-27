@@ -57,53 +57,24 @@ impl Monkey {
         let mut throws: Vec<(usize, i128)> = vec![];
         for _ in 0..self.items.len() {
             let mut current_item = self.items.remove(0);
-            // println!("  Monkey inspects item with worry level of {current_item}");
             if self.operator == Operation::Square {
                 current_item = current_item * current_item;
-                // println!("   Worry level is squared to {current_item}");
             }
             if self.operator == Operation::Mul {
                 current_item = current_item * self.operator_value;
-                // println!(
-                //     "   Worry level is multiplied by {} to {current_item}",
-                //     self.operator_value
-                // );
             }
             if self.operator == Operation::Add {
                 current_item = current_item + self.operator_value;
-                // println!(
-                //     "   Worry level increases by {} to {current_item}",
-                //     self.operator_value
-                // );
             }
             if worry_levels_divide {
                 current_item = current_item / 3;
             }
             self.total_items_inspected += 1;
-            // println!(
-            //     "   Monkey gets bored with item. Worry level is divided by 3 to {current_item}"
-            // );
             if current_item % self.test_divisor as i128 == 0 {
                 throws.push((self.test_true_target, current_item));
-                // println!(
-                //     "   Current worry level is divisible by {}.",
-                //     self.test_divisor
-                // );
-                // println!(
-                //     "   Item with worry level {current_item} is thrown to monkey {}.",
-                //     self.test_true_target
-                // )
             }
             if current_item % self.test_divisor as i128 != 0 {
                 throws.push((self.test_false_target, current_item));
-                // println!(
-                //     "   Current worry level is not divisible by {}.",
-                //     self.test_divisor
-                // );
-                // println!(
-                //     "   Item with worry level {current_item} is thrown to monkey {}.",
-                //     self.test_false_target
-                // )
             }
         }
         return throws;
@@ -225,9 +196,7 @@ fn calculate_monkey_business(
     println!("{modulo}");
 
     for _ in 1..=rounds {
-        // println!("Round {x}");
         for current_monkey in 0..monkeys.len() {
-            // println!(" Monkey {current_monkey}");
             let throws: Vec<(usize, i128)> = monkeys[current_monkey].update(worry_levels_divide);
             for throw in throws {
                 monkeys[throw.0].add_item(throw.1);
@@ -240,24 +209,6 @@ fn calculate_monkey_business(
                 }
             }
         }
-        // for current_monkey in 0..monkeys.len() {
-        //     print!(
-        //         " Monkey {current_monkey} has {} items, ",
-        //         monkeys[current_monkey].items.len()
-        //     );
-        //     for y in 0..monkeys[current_monkey].items.len() {
-        //         print!("{}, ", monkeys[current_monkey].items[y])
-        //     }
-        //     println!()
-        // }
-        // println!();
-        // for a in 0..monkeys.len() {
-        //     println!(
-        //         "Monkey {a} inspected items {} times.",
-        //         monkeys[a].total_items_inspected
-        //     );
-        // }
-        // println!()
     }
 
     let mut max1 = 0;
